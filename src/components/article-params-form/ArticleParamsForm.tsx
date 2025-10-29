@@ -5,6 +5,8 @@ import { Select } from 'src/ui/select/Select';
 import { RadioGroup } from 'src/ui/radio-group/RadioGroup';
 import styles from './ArticleParamsForm.module.scss';
 import { Separator } from 'src/ui/separator/Separator';
+import { Text } from 'src/ui/text/Text';
+import clsx from 'clsx';
 
 import {
 	fontFamilyOptions,
@@ -45,10 +47,13 @@ export const ArticleParamsForm = ({
 		<>
 			<ArrowButton isOpen={open} onClick={() => setOpen(!open)} />
 
-			<aside
-				className={`${styles.container} ${open ? styles.container_open : ''}`}>
+			<aside className={clsx(styles.container, open && styles.container_open)}>
 				<form className={styles.form} onSubmit={submit} onReset={reset}>
-					<h2 className={styles.title}>Задайте параметры</h2>
+					<div className={styles.titleWrap}>
+						<Text as='h2' size={31} weight={800}>
+							Задайте параметры
+						</Text>
+					</div>
 					{/* Шрифт */}
 					<fieldset className={styles.fieldset}>
 						<legend className={styles.legend}>Шрифт</legend>

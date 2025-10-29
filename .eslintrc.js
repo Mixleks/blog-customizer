@@ -25,7 +25,6 @@ module.exports = {
 		'plugin:import/warnings',
 		'plugin:import/typescript',
 		'plugin:eslint-comments/recommended',
-		'plugin:storybook/recommended',
 	],
 	rules: {
 		semi: [2, 'always'],
