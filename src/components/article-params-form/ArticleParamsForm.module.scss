@@ -30,3 +30,20 @@
 	justify-content: space-between;
 	margin-top: auto;
 }
+
+.title {
+	font-weight: 800;
+	font-size: 31px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+.fieldset {
+	margin-block-start: 50px;
+}
+
+.legend {
+	margin-block-end: 4px;
+	font-weight: 800;
+	font-size: 12px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+}
