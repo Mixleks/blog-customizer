@@ -16,6 +16,7 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px;
 	box-sizing: border-box;
 	width: 616px;
 	height: auto;
@@ -29,4 +30,15 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
+}
+
+.fieldset {
+	margin-block-start: 50px;
+}
+
+.legend {
+	margin-block-end: 4px;
+	font-weight: 800;
+	font-size: 12px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }

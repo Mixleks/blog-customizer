@@ -1,15 +1,21 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+import { createRequire } from 'node:module';
 import type { StorybookConfig } from '@storybook/react-webpack5';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
 const path = require('path');
 
 const config: StorybookConfig = {
 	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+
 	addons: [
-        '@storybook/addon-links',
-        '@storybook/addon-essentials',
-        '@storybook/addon-onboarding',
-        '@storybook/addon-interactions',
-        '@storybook/addon-styling-webpack',
-        {
+		'@storybook/addon-links',
+		'@storybook/addon-onboarding',
+		'@storybook/addon-styling-webpack',
+		{
 			name: '@storybook/addon-styling-webpack',
 
 			options: {
@@ -60,8 +66,10 @@ const config: StorybookConfig = {
 				],
 			},
 		},
-        '@storybook/addon-webpack5-compiler-swc'
-    ],
+		'@storybook/addon-webpack5-compiler-swc',
+		'@storybook/addon-docs',
+	],
+
 	webpackFinal: async (config) => {
 		if (config?.resolve?.alias) {
 			config.resolve.alias = {
@@ -73,7 +81,9 @@ const config: StorybookConfig = {
 
 		return config;
 	},
+
 	framework: '@storybook/react-webpack5',
+
 	swc: () => ({
 		jsc: {
 			transform: {
@@ -83,8 +93,5 @@ const config: StorybookConfig = {
 			},
 		},
 	}),
-	docs: {
-		autodocs: 'tag',
-	},
 };
 export default config;
